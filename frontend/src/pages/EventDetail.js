@@ -33,7 +33,7 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch("http://backend:8080/events/" + id);
+  const response = await fetch("http://localhost:8080/events/" + id);
 
   if (!response.ok) {
     throw json(
@@ -49,7 +49,7 @@ async function loadEvent(id) {
 }
 
 async function loadEvents() {
-  const response = await fetch("http://backend:8080/events");
+  const response = await fetch("http://localhost:8080/events");
 
   if (!response.ok) {
     throw json(
@@ -76,7 +76,7 @@ export async function loader({ request, params }) {
 export async function action({ params, request }) {
   const eventId = params.eventId;
   const token = getAuthToken();
-  const response = await fetch("http://backend:8080/events/" + eventId, {
+  const response = await fetch("http://localhost:8080/events/" + eventId, {
     method: request.method,
     headers: {
       "Content-Type": "application/json",

@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM node
 
 WORKDIR /app
 
@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "npm","run","start" ]
+CMD [ "npm","start" ]
